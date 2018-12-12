@@ -1,0 +1,23 @@
+/*
+ * if else yapýsý kullanýmý
+ */
+int var = 0;
+
+void setup() {
+  Serial.begin(9600); //Console ile haberleþmek için gereken tanýmlama
+}
+
+void loop() {
+  Serial.println("Hello World"); //Console a "Hello World" yazýldý.
+
+  //var 100 den küçükse ekrana yazdýr.
+  if(var < 50) {
+    Serial.println("Var elliden güçük");  
+  } else if(var < 100) {
+    Serial.println("Var 50 ile 100 arasýnda")
+  } else {
+    Serial.println("Var 100 den büyük");    
+  }
+
+  var++; //var ý bir arttýr
+}

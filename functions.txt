@@ -1,0 +1,26 @@
+/*
+ * Fonksiyon kullanýmý
+ */
+void setup() {
+  Serial.begin(9600); //Serial connection is declared
+}
+
+void func1() {
+  Serial.println("Func1"); //Ekrana func1 yazdýr
+}
+
+void func2(float x) {
+  float val = x + 10; //x + 10 u hesapla ve baþka deðiþkende tut
+  Serial.println(val); //x+10 u tutan deðeri yazdýr.
+}
+
+double func3(float x, float y) {
+  return x*y; //x ile y çarpýmýný sonuç olarak döndür.
+}
+
+void loop() {
+  func1();
+  func2(4);
+  double x = func3(6.40, 2); //x deðiþkenine func3 fonksiyonunun sonucunu eþitle:
+  Serial.println(x); // x i yazýr
+}

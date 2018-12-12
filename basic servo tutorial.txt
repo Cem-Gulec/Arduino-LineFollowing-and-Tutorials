@@ -1,0 +1,20 @@
+/*
+ * Servo Tutorial
+ */
+
+#include <Servo.h>  //Servo library
+
+Servo servoObejct;  //Servo object is created.
+
+void setup()
+{
+  servoObject.attach(9);  // Pin is setted
+}
+ 
+void loop()
+{
+  servoObject.write(100);  
+  delay(1000);
+  servoObject.write(20);   
+  delay(1000);
+}

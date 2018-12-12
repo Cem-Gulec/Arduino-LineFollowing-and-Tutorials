@@ -1,0 +1,34 @@
+/*
+ * Arduino I/O iþlemleri
+ */
+
+//Input ve output pinleri belirlendi
+const int pinLED = 13;
+const int pinLED2 = 8;
+const int pinSharp = 12;
+const int pinPotant = A2;
+
+void setup() {
+  //Pinler input veya output olarak ayarlandý
+  pinMode(pinLED, OUTPUT);
+  pinMode(pinLED2, OUTPUT);
+  pinMode(pinSharp, INPUT);
+  pinMode(pinPotant, INPUT);
+}
+
+void loop() {
+  digitalWrite(pinLED, HIGH); //Led yandý
+  delay(1000); // 1 sn bekle
+  digitalWrite(pinLED, LOW); //Led söndü
+  delay(1000); // 1 sn bekle
+
+  int dataSharp = digitalRead(pinSharp); //dataSharp deðiþkeninde sensörün durumu okunup tutuluyor. (0->görüyor, 1-> görmüyor)
+  int potantValue = analogRead(pinPotant); //dataPotant deðiþkeninde potansiyometrenin deðeri tutuluyor (0 ile 1023 arasýnda bir deðer)
+
+  //Yavaþ yavaþ son parlaklýða kadar ledin yanmasýný saðlayan döngü.
+  for(int i=0; i<256; i++) {
+    analogWrite(pinLED2, i); //output pinine 0 ile 255 arasýnda bir deðerle gidecek voltajý ayarlayabiliriz.
+    delay(100);
+  }
+  
+}
